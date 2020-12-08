@@ -16,6 +16,8 @@ Including another URLconf
 from django.urls import include, path
 from rest_framework import routers
 from senedobackend.api import views
+from django.conf.urls import include
+from django.contrib import admin
 
 router = routers.DefaultRouter()
 router.register(r'users', views.UserViewSet)
@@ -24,6 +26,8 @@ router.register(r'groups', views.GroupViewSet)
 # Setup automatic URL routing
 # Additionally, we include login URLs for the browsable API.
 urlpatterns = [
-    path('', include(router.urls)),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+    # path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    path('admin', admin.site.urls),
+    path('', include('senedobackend.api.urls')),
 ]
