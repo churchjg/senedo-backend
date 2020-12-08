@@ -1,0 +1,1 @@
+web: gunicorn senedobackend.wsgi --log-file -
