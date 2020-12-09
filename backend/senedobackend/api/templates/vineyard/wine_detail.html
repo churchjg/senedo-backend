@@ -1,0 +1,19 @@
+<!-- api/templates/vineyard/wine_detail.html -->
+<h2>{{ wine.name }} <a href="">(edit)</a></h2>
+<h4>{{ wine.year }}</h4>
+<h4>{{ wine.category }}</h4>
+<h4>{{ wine.description }}</h4>
+<h4>{{ wine.pairings }}</h4>
+<h4>{{ wine.price }}</h4>
+<h4>{{ wine.rating }}</h4>
+
+<img src="{{ wine.image }}" alt="" class="wine.photo" />
+
+<h3>Wines <a href="">(+)</a></h3>
+<ul>
+  {% for name in wines.name.all %}
+  <li>
+    <a href="">{{ wine.name }}-{{ wine.price }}</a>
+  </li>
+  {% endfor %}
+</ul>

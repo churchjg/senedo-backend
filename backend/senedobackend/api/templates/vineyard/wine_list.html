@@ -3,7 +3,7 @@
 <ul>
   {% for wine in wines %}
   <li>
-    <a href="">{{ wine.name }}</a>
+    <a href="{% url 'wine_detail' pk=wine.pk %}"> {{ wine.name }} </a>
   </li>
   {% endfor %}
 </ul>

@@ -1,0 +1,18 @@
+<!-- api/templates/vineyard/gift_detail.html -->
+<h2>{{ gift.name }} <a href="">(edit)</a></h2>
+<h4>{{ gift.year }}</h4>
+<h4>{{ gift.category }}</h4>
+<h4>{{ gift.description }}</h4>
+<h4>{{ gift.price }}</h4>
+
+
+<img src="{{ gift.image }}" alt="" class="gift.photo" />
+
+<h3>Gift Cards<a href="">(+)</a></h3>
+<ul>
+  {% for name in gifts.name.all %}
+  <li>
+    <a href="">{{ gift.name }}-{{ gift.price }}</a>
+  </li>
+  {% endfor %}
+</ul>

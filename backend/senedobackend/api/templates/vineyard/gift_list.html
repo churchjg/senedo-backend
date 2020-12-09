@@ -3,7 +3,7 @@
 <ul>
   {% for gift in gifts %}
   <li>
-    <a href="">{{ gift.name }}</a>
+    <a href="{% url 'gift_detail' pk=gift.pk %}"> {{ gift.name }} </a>
   </li>
   {% endfor %}
 </ul>

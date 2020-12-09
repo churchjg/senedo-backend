@@ -26,4 +26,10 @@ def gift_list(request):
     gifts = Gift.objects.all()
     return render(request, 'vineyard/gift_list.html', {'gifts': gifts})
 
+def wine_detail(request, pk):
+    wine = Wine.objects.get(id=pk)
+    return render(request, 'vineyard/wine_detail.html', {'wine': wine})
 
+def gift_detail(request, pk):
+    gift = Gift.objects.get(id=pk)
+    return render(request, 'vineyard/gift_detail.html', {'gift': gift})
