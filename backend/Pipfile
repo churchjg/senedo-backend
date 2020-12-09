@@ -9,6 +9,7 @@ django = "*"
 django-extensions = "*"
 djangorestframework = "*"
 django-heroku = "*"
+gunicorn = "*"
 
 [dev-packages]
 
