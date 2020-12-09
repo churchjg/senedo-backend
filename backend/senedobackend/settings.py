@@ -26,7 +26,7 @@ SECRET_KEY = 'hf^)c$f1t8u+_*#973$u=om&49q@lz(ii@6az_+c2t(cqjsb8&'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'https://senedo-backend.herokuapp.com/'
+    '*'
 ]
 
 REST_FRAMEWORK = {
