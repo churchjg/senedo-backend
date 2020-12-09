@@ -22,3 +22,13 @@ class WineSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Wine
         fields = ('name', 'year', 'image', 'category', 'description', 'price', 'rating')
+
+class GiftSerializer(serializers.HyperlinkedModelSerializer):
+    Gift = serializers.HyperlinkedRelatedField(
+        view_name='gift_detail',
+        many=True,
+        read_only=True
+    )
+    class Meta:
+        model = Gift
+        fields = ('name', 'year', 'image', 'category', 'description', 'price')
