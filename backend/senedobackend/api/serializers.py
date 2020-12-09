@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from .models import Wine
+from .models import Wine, Gift
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
