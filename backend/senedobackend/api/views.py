@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
-from .models import Wine
+from .models import Wine, Gift
 from rest_framework import viewsets
 from .serializers import UserSerializer, GroupSerializer
 
@@ -21,5 +21,9 @@ class GroupViewSet(viewsets.ModelViewSet):
 def wine_list(request):
     wines = Wine.objects.all()
     return render(request, 'vineyard/wine_list.html', {'wines': wines})
+
+def gift_list(request):
+    gifts = Gift.objects.all()
+    return render(request, 'vineyard/gift_list.html', {'gifts': gifts})
 
 

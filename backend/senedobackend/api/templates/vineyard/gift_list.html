@@ -1,0 +1,9 @@
+<!-- api/templates/vineyard/wine_list.html -->
+<h2>Gift Certificates<a href="">(+)</a></h2>
+<ul>
+  {% for gift in gifts %}
+  <li>
+    <a href="">{{ gift.name }}</a>
+  </li>
+  {% endfor %}
+</ul>
