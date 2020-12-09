@@ -14,7 +14,7 @@ class GroupSerializer(serializers.HyperlinkedModelSerializer):
 
 
 class WineSerializer(serializers.HyperlinkedModelSerializer):
-    songs = serializers.HyperlinkedRelatedField(
+    Wine = serializers.HyperlinkedRelatedField(
         view_name='wine_detail',
         many=True,
         read_only=True

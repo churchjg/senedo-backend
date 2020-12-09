@@ -30,7 +30,7 @@ urlpatterns = [
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
     #api routing
     path('admin', admin.site.urls),
-    path('/', include('senedobackend.api.urls')),
+    path('', include('senedobackend.api.urls')),
     path('wines/<int:pk>', views.wine_detail, name='wine_detail'),
     path('gifts/<int:pk>', views.gift_detail, name='gift_detail'),
 ]
