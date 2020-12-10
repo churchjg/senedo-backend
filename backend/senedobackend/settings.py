@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 # import django_heroku
 from pathlib import Path
+import django_heroku
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -95,6 +97,9 @@ DATABASES = {
     }
 }
 
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -139,4 +144,4 @@ CORS_ORIGIN_ALLOW_ALL = True
 STATIC_URL = '/static/'
 
 # # Activate Django-Heroku.
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
