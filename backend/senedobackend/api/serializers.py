@@ -41,4 +41,4 @@ class GallerySerializer(serializers.HyperlinkedModelSerializer):
     )
     class Meta:
         model = Gallery
-        fields = ('name', 'year', 'image', 'description')
+        fields = ('name', 'image', 'description')

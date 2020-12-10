@@ -28,7 +28,6 @@ class Gift(models.Model):
 
 class Gallery(models.Model):
     name = models.CharField(max_length=100)
-    year = models.CharField(max_length=100)
     image = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
     
