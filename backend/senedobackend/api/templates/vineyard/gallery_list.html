@@ -1,0 +1,9 @@
+<!-- api/templates/vineyard/wine_list.html -->
+<h2>Senedo Ridge Gallery<a href="">(+)</a></h2>
+<ul>
+  {% for gallery in galleries %}
+  <li>
+    <a href="{% url 'gallery_detail' pk=gallery.pk %}"> {{ gallery.name }} </a>
+  </li>
+  {% endfor %}
+</ul>

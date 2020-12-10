@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from .models import Wine, Gift
+from .models import Wine, Gift, Gallery
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -32,3 +32,13 @@ class GiftSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Gift
         fields = ('name', 'year', 'image', 'category', 'description', 'price')
+
+class GallerySerializer(serializers.HyperlinkedModelSerializer):
+    Gallery = serializers.HyperlinkedRelatedField(
+        view_name='gallery_detail',
+        many=True,
+        read_only=True
+    )
+    class Meta:
+        model = Gallery
+        fields = ('name', 'year', 'image', 'description')

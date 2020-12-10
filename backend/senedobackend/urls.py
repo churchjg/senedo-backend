@@ -33,4 +33,5 @@ urlpatterns = [
     path('', include('senedobackend.api.urls')),
     path('wines/<int:pk>', views.wine_detail, name='wine_detail'),
     path('gifts/<int:pk>', views.gift_detail, name='gift_detail'),
+    path('galleries/<int:pk>', views.gallery_detail, name='gallery_detail'),
 ]

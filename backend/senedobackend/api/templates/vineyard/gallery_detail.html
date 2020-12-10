@@ -1,0 +1,18 @@
+<!-- api/templates/vineyard/gallery_detail.html -->
+<h2>{{ gallery.name }} <a href="">(edit)</a></h2>
+<h4>{{ gallery.year }}</h4>
+<h4>{{ gallery.image}}</h4>
+<h4>{{ gallery.description }}</h4>
+
+
+
+<img src="{{ gallery.image }}" alt="" class="gallery.photo" />
+
+<h3>Senedo Ridge Gallery<a href="">(+)</a></h3>
+<ul>
+  {% for name in galleries.name.all %}
+  <li>
+    <a href="">{{ gallery.name }}-{{ gallery.description }}</a>
+  </li>
+  {% endfor %}
+</ul>
