@@ -10,7 +10,6 @@ class Wine(models.Model):
     description = models.CharField(max_length=500)
     pairings = models.CharField(max_length=500)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    rating = models.PositiveIntegerField()
 
     def __str__(self):
         return str(self.name) + ": $" + str(self.price)
