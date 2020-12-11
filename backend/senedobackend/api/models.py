@@ -30,3 +30,8 @@ class Gallery(models.Model):
     image = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
     
+class Event(models.Model):
+    name = models.CharField(max_length=100)
+    image = models.CharField(max_length=100)
+    date = models.CharField(max_length=100)
+    description = models.CharField(max_length=500)

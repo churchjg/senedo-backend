@@ -1,0 +1,17 @@
+<!-- api/templates/vineyard/event_detail.html -->
+<h2>{{ event.name }} <a href="">(edit)</a></h2>
+<h4>{{ event.image}}</h4>
+<h4>{{ event.description }}</h4>
+
+
+
+<img src="{{ event.image }}" alt="" class="event.photo" />
+
+<h3>Senedo Ridge Events<a href="">(+)</a></h3>
+<ul>
+  {% for name in events.name.all %}
+  <li>
+    <a href="">{{ event.name }}-{{ event.description }}</a>
+  </li>
+  {% endfor %}
+</ul>

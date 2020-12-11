@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
-from .models import Wine, Gift, Gallery
+from .models import Wine, Gift, Gallery, Event
 from rest_framework import viewsets
 from .serializers import UserSerializer, GroupSerializer
 
@@ -41,3 +41,11 @@ def gallery_list(request):
 def gallery_detail(request, pk):
     gallery = Gallery.objects.get(id=pk)
     return render(request, 'vineyard/gallery_detail.html', {'gallery': gallery})
+
+def event_list(request):
+    events = Event.objects.all()
+    return render(request, 'vineyard/event_list.html', {'events': events})
+
+def event_detail(request, pk):
+    event = Event.objects.get(id=pk)
+    return render(request, 'vineyard/event_detail.html', {'event': event})

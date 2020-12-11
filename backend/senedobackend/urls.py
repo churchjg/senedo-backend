@@ -34,4 +34,5 @@ urlpatterns = [
     path('wines/<int:pk>', views.wine_detail, name='wine_detail'),
     path('gifts/<int:pk>', views.gift_detail, name='gift_detail'),
     path('galleries/<int:pk>', views.gallery_detail, name='gallery_detail'),
+    path('events/<int:pk>', views.event_detail, name='event_detail'),
 ]
