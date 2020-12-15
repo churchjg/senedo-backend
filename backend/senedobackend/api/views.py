@@ -59,9 +59,9 @@ def checkout_detail(request, pk):
     return render(request, 'vineyard/checkout_detail.html', {'checkout': checkout})
 
 def home_list(request):
-    home = Home.objects.all()
+    homes = Home.objects.all()
     return render(request, 'vineyard/home_list.html', {'homes': homes})
 
 def home_detail(request, pk):
-    home = Homes.objects.get(id=pk)
+    home = Home.objects.get(id=pk)
     return render(request, 'vineyard/home_detail.html', {'home': home})
