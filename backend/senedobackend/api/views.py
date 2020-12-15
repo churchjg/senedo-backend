@@ -58,10 +58,10 @@ def checkout_detail(request, pk):
     checkout = Checkout.objects.get(id=pk)
     return render(request, 'vineyard/checkout_detail.html', {'checkout': checkout})
 
-def home(request):
+def home_list(request):
     home = Home.objects.all()
     return render(request, 'vineyard/home_list.html', {'homes': homes})
 
-def home(request, pk):
+def home_detail(request, pk):
     home = Homes.objects.get(id=pk)
     return render(request, 'vineyard/home_detail.html', {'home': home})
