@@ -35,4 +35,5 @@ urlpatterns = [
     path('gifts/<int:pk>', views.gift_detail, name='gift_detail'),
     path('galleries/<int:pk>', views.gallery_detail, name='gallery_detail'),
     path('events/<int:pk>', views.event_detail, name='event_detail'),
+    path('checkouts/<int:pk>', views.checkout_detail, name='checkout_detail'),
 ]

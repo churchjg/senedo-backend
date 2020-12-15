@@ -1,8 +1,8 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
-from .models import Wine, Gift, Gallery, Event
+from .models import Wine, Gift, Gallery, Event, Checkout
 from rest_framework import viewsets
-from .serializers import UserSerializer, GroupSerializer, WineSerializer, GiftSerializer, GallerySerializer, EventSerializer
+from .serializers import UserSerializer, GroupSerializer, WineSerializer, GiftSerializer, GallerySerializer, EventSerializer, CheckoutSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -49,3 +49,11 @@ def event_list(request):
 def event_detail(request, pk):
     event = Event.objects.get(id=pk)
     return render(request, 'vineyard/event_detail.html', {'event': event})
+
+def checkout_list(request):
+    checkouts = Checkout.objects.all()
+    return render(request, 'vineyard/checkout_list.html', {'checkouts': checkouts})
+
+def checkout_detail(request, pk):
+    checkout = Checkout.objects.get(id=pk)
+    return render(request, 'vineyard/checkout_detail.html', {'checkout': checkout})

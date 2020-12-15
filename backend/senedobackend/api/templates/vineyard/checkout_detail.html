@@ -1,0 +1,25 @@
+<!-- api/templates/vineyard/checkout_detail.html -->
+<h2>{{ checkout.first }} <a href="">(edit)</a></h2>
+<h4>{{ checkout.last }}</h4>
+<h4>{{ checkout.address1 }}</h4>
+<h4>{{ checkout.address2 }}</h4>
+<h4>{{ checkout.city }}</h4>
+<h4>{{ checkout.state }}</h4>
+<h4>{{ checkout.zip }}</h4>
+<h4>{{ checkout.country }}</h4>
+<h4>{{ checkout.cardname }}</h4>
+<h4>{{ checkout.cardnumber }}</h4>
+<h4>{{ checkout.expiration }}</h4>
+<h4>{{ checkout.cvv }}</h4>
+
+
+
+
+<h3>Checkout <a href="">(+)</a></h3>
+<ul>
+  {% for last in checkouts.last.all %}
+  <li>
+    <a href="">{{ checkout.first }}-{{ checkout.last }}</a>
+  </li>
+  {% endfor %}
+</ul>

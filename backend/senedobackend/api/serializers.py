@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import serializers
-from .models import Wine, Gift, Gallery, Event
+from .models import Wine, Gift, Gallery, Event, Checkout
 
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
@@ -52,3 +52,13 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Event
         fields = ('name', 'image', 'date', 'description')
+
+class CheckoutSerializer(serializers.HyperlinkedModelSerializer):
+    Checkout = serializers.HyperlinkedRelatedField(
+        view_name='checkout_detail',
+        many=True,
+        read_only=True
+    )
+    class Meta:
+        model = Checkout
+        fields = ('first', 'last', 'address1', 'address2', 'city', 'state', 'zip', 'country', 'cardname', 'cardnumber', 'expiration', 'cvv')

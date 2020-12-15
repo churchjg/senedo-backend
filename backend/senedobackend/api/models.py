@@ -35,3 +35,18 @@ class Event(models.Model):
     image = models.CharField(max_length=100)
     date = models.CharField(max_length=100)
     description = models.CharField(max_length=500)
+
+class Checkout(models.Model):
+    first = models.CharField(max_length=100)
+    last = models.CharField(max_length=100)
+    address1 = models.CharField(max_length=100)
+    address2 = models.CharField(max_length=500)
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=500)
+    zip = models.CharField(max_length=100)
+    country = models.CharField(max_length=500)
+    cardname = models.CharField(max_length=100)
+    cardnumber = models.CharField(max_length=100)
+    expiration = models.CharField(max_length=100)
+    cvv = models.CharField(max_length=500)
+    

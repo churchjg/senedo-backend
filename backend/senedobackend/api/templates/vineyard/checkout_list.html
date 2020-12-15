@@ -1,0 +1,9 @@
+<!-- api/templates/vineyard/checkout_list.html -->
+<h2>Senedo Ridge Checkout<a href="">(+)</a></h2>
+<ul>
+  {% for checkout in checkouts %}
+  <li>
+    <a href="{% url 'checkout_detail' pk=checkout.pk %}"> {{ checkout.last }} </a>
+  </li>
+  {% endfor %}
+</ul>
