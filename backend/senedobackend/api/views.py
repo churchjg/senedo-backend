@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.contrib.auth.models import User, Group
 from .models import Wine, Gift, Gallery, Event
 from rest_framework import viewsets
-from .serializers import UserSerializer, GroupSerializer
+from .serializers import UserSerializer, GroupSerializer, WineSerializer, GiftSerializer, GallerySerializer, EventSerializer
 
 class UserViewSet(viewsets.ModelViewSet):
     """
