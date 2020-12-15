@@ -2,6 +2,8 @@ from django.db import models
 
 # Create your models here.
 
+class Home(models.Model):
+    blank = models.CharField(max_length=100)
 class Wine(models.Model):
     name = models.CharField(max_length=100)
     year = models.CharField(max_length=100)

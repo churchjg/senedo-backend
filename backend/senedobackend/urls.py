@@ -36,4 +36,5 @@ urlpatterns = [
     path('galleries/<int:pk>', views.gallery_detail, name='gallery_detail'),
     path('events/<int:pk>', views.event_detail, name='event_detail'),
     path('checkouts/<int:pk>', views.checkout_detail, name='checkout_detail'),
+    path('homes/<int:pk>', views.home_detail, name='home_detail'),
 ]

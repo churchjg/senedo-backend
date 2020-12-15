@@ -1,0 +1,9 @@
+<!-- api/templates/vineyard/wine_list.html -->
+<h2>Home<a href=""></a></h2>
+<ul>
+  {% for home in homes %}
+  <li>
+    <a href="{% url 'home_detail' pk=home.pk %}"> {{ home.blank }} </a>
+  </li>
+  {% endfor %}
+</ul>
