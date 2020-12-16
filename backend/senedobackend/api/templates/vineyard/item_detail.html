@@ -1,0 +1,17 @@
+<!-- api/templates/vineyard/item_detail.html -->
+<h2>{{ item.name }} <a href="">(edit)</a></h2>
+<h4>{{ item.year }}</h4>
+<h4>{{ item.description }}</h4>
+<h4>{{ item.price }}</h4>
+
+
+<img src="{{ item.image }}" alt="" class="item.photo" />
+
+<h3>Items <a href="">(+)</a></h3>
+<ul>
+  {% for name in items.name.all %}
+  <li>
+    <a href="">{{ item.name }}-{{ item.price }}</a>
+  </li>
+  {% endfor %}
+</ul>

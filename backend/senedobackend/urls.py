@@ -37,4 +37,12 @@ urlpatterns = [
     path('events/<int:pk>', views.event_detail, name='event_detail'),
     path('checkouts/<int:pk>', views.checkout_detail, name='checkout_detail'),
     path('homes/<int:pk>', views.home_detail, name='home_detail'),
+    path('items/<int:pk>', views.item_detail, name='item_detail'),
+    
+    # path('cabsauvs/<int:pk>', views.cabsauv_detail, name='cabsauv_detail'),
+    # path('vints/<int:pk>', views.vint_detail, name='vint_detail'),
+    # path('roses/<int:pk>', views.rose_detail, name='rose_detail'),
+    # path('chambs/<int:pk>', views.chamb_detail, name='chamb_detail'),
+    # path('pverdots/<int:pk>', views.pverdot_detail, name='pverdot_detail'),
+
 ]

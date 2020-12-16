@@ -1,0 +1,9 @@
+<!-- api/templates/vineyard/item_list.html -->
+<h2>Item<a href="">(+)</a></h2>
+<ul>
+  {% for item in items %}
+  <li>
+    <a href="{% url 'item_detail' pk=item.pk %}"> {{ item.name }} </a>
+  </li>
+  {% endfor %}
+</ul>

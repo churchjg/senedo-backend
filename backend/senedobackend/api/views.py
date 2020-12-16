@@ -1,8 +1,14 @@
 from django.shortcuts import render
 from django.contrib.auth.models import User, Group
-from .models import Wine, Gift, Gallery, Event, Checkout, Home
+from .models import Wine, Gift, Gallery, Event, Checkout, Home, Item
 from rest_framework import viewsets
-from .serializers import UserSerializer, GroupSerializer, WineSerializer, GiftSerializer, GallerySerializer, EventSerializer, CheckoutSerializer, HomeSerializer
+from .serializers import UserSerializer, GroupSerializer, WineSerializer, GiftSerializer, GallerySerializer, EventSerializer, CheckoutSerializer, HomeSerializer, ItemSerializer
+from flask import jsonify
+from django.http import JsonResponse
+from django.core import serializers
+
+
+
 
 class UserViewSet(viewsets.ModelViewSet):
     """
@@ -20,11 +26,16 @@ class GroupViewSet(viewsets.ModelViewSet):
 
 def wine_list(request):
     wines = Wine.objects.all()
-    return render(request, 'vineyard/wine_list.html', {'wines': wines})
+    print(wines)
+    wines_json = serializers.serialize("json", wines)
+    return JsonResponse(wines_json, safe=False)
 
 def gift_list(request):
     gifts = Gift.objects.all()
-    return render(request, 'vineyard/gift_list.html', {'gifts': gifts})
+    print(gifts)
+    gifts_json = serializers.serialize("json", gifts)
+    return JsonResponse(gifts_json, safe=False)
+    
 
 def wine_detail(request, pk):
     wine = Wine.objects.get(id=pk)
@@ -36,7 +47,8 @@ def gift_detail(request, pk):
 
 def gallery_list(request):
     galleries = Gallery.objects.all()
-    return render(request, 'vineyard/gallery_list.html', {'galleries': galleries})
+    galleries_json = serializers.serialize("json", galleries)
+    return JsonResponse(galleries_json, safe=False)
 
 def gallery_detail(request, pk):
     gallery = Gallery.objects.get(id=pk)
@@ -44,7 +56,8 @@ def gallery_detail(request, pk):
 
 def event_list(request):
     events = Event.objects.all()
-    return render(request, 'vineyard/event_list.html', {'events': events})
+    events_json = serializers.serialize("json", events)
+    return JsonResponse(events_json, safe=False)
 
 def event_detail(request, pk):
     event = Event.objects.get(id=pk)
@@ -52,7 +65,8 @@ def event_detail(request, pk):
 
 def checkout_list(request):
     checkouts = Checkout.objects.all()
-    return render(request, 'vineyard/checkout_list.html', {'checkouts': checkouts})
+    checkouts_json = serializers.serialize("json", checkouts)
+    return JsonResponse(checkouts_json, safe=False)
 
 def checkout_detail(request, pk):
     checkout = Checkout.objects.get(id=pk)
@@ -60,8 +74,19 @@ def checkout_detail(request, pk):
 
 def home_list(request):
     homes = Home.objects.all()
-    return render(request, 'vineyard/home_list.html', {'homes': homes})
+    homes_json = serializers.serialize("json", homes)
+    return JsonResponse(homes_json, safe=False)
 
 def home_detail(request, pk):
     home = Home.objects.get(id=pk)
     return render(request, 'vineyard/home_detail.html', {'home': home})
+
+def item_list(request):
+    items = Item.objects.all()
+    items_json = serializers.serialize("json", items)
+    return JsonResponse(items_json, safe=False)
+
+def item_detail(request, pk):
+    item = item.objects.get(id=pk)
+    return render(request, 'vineyard/item_detail.html', {'item': item})
+    
